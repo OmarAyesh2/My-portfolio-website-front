@@ -1,0 +1,170 @@
+:root {
+    --bg-color: rgba(255, 255, 255, 0.15);
+}
+
+
+aside.sidebar,
+main {
+    height: 100%;
+    background-color: var(--bg-color);
+    backdrop-filter: blur(12px);
+    border-radius: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+button.toggle-side {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: var(--bg-color);
+    backdrop-filter: blur(12px);
+    color: whitesmoke;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    z-index: 10001;
+    cursor: pointer;
+}
+
+aside.sidebar {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
+    color: whitesmoke;
+}
+
+aside.sidebar > div,
+aside.sidebar > nav {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1.5rem;
+}
+
+aside.sidebar > nav > a {
+    color: whitesmoke;
+    text-decoration: none;
+    display: flex;
+    column-gap: 0.8rem;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: max-content;
+    padding: 0.6rem 1.6rem;
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+aside.sidebar > nav > a.selected {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+aside.sidebar > nav > a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    
+}
+
+aside.sidebar > div > div.main-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+aside.sidebar > div > div.main-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main {
+    height: 100%;
+    padding: clamp(1.8rem, 3.2rem, 4.5vw);
+    
+}
+
+@media screen and (max-width: 1023px) {
+
+    main {
+        width: 100%
+    }
+
+    button.toggle-side {
+        display: flex;
+    }
+
+    aside.sidebar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 0;
+        height:100%;
+        width: 75%;
+        max-width: 350px;
+        z-index: 10000;
+        transform: translateX(-100%);
+        transition: all .25s ease-in-out;
+    }
+
+    aside.sidebar.open {
+        transform: translateX(0%);
+    }  
+
+    .overlay.open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(12px);
+        z-index: 9999;
+        transition: all .25s ease-in-out;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    aside.sidebar {
+        width: 20%;
+    }
+
+    main {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    aside.sidebar {
+        width: 16%;
+    }
+
+    main {
+        width: 84%
+    }
+}
+
+@media screen and (min-width: 1650px) {
+    aside.sidebar {
+        width: 12%;
+    }
+
+    main {
+        width: 88%
+    }
+}
+
+
+
+
+

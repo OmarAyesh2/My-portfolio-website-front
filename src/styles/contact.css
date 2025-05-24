@@ -1,0 +1,143 @@
+main {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+main::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.contact-page {
+    max-width: 900px;
+    margin: auto;
+}
+
+.contact-page h1 {
+    font-size:clamp(2rem,5vw,3.236rem);
+}
+.contact-page h1 > span {
+    color: #0b5456;
+}
+
+.contact-page .contact-info > div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.contact-page .contact-info .info {
+    display: flex;
+    align-items: center;
+    column-gap: .7rem;
+    text-decoration: none;
+    color: whitesmoke;
+    transition: all .4s;
+}
+
+.info > span {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.info > div > span:nth-child(1) {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+a.info:hover > span {
+    background-color: rgba(36, 251, 186, 0.2);
+    color: #0b5456;
+    transition: all 0.3s ease-in-out;
+}
+a.info:hover > div > span:nth-child(2) {
+    color:#0b5456;
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-page .social > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    perspective: 1500px;
+}
+
+.contact-page .profile {
+    width: calc(50% - .75rem);
+    transform-style: preserve-3d;
+    transition: 0.3s;
+}
+
+.contact-page .profile:hover {
+    transform: translateZ(20px);
+}
+.contact-page .profile:hover > a > span {
+    background-color: rgba(36, 251, 186, 0.2);
+    color: #0b5456;
+} 
+
+
+.contact-page .profile > a {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.contact-page .profile > a > span {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-page .profile > a > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-page .profile > a > div > span:nth-child(2) {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: .875rem;
+}
+
+.contact-pref > div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.contact-pref > div > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-pref > div > div > span:nth-child(2) {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: .875rem;
+}
+
+@media screen and (max-width: 680px) {
+    .contact-page .profile {
+        width: 100%;
+    }
+}

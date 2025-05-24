@@ -1,0 +1,17 @@
+
+.page {
+    color: whitesmoke;
+
+}
+
+.content-container {
+    background: rgb(255 255 255 / 10%);
+    box-shadow: 0 8px 32px #1f268733;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, .2);
+    transition: all .3s ease-in-out;
+    will-change: transform, box-shadow;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
