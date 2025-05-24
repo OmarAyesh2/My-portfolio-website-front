@@ -115,7 +115,7 @@ function MediaPlayer({activeWorks, setActiveWorks}) {
                                 <source src={baseURL+work.media} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>) : (
-                                <img loading='lazy' src={baseURL+work.media} />
+                                <img  src={baseURL+work.media} />
                             )}
                     </div>
                 )
