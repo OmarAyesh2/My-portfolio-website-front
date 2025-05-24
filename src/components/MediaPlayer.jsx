@@ -110,13 +110,13 @@ function MediaPlayer({activeWorks, setActiveWorks}) {
             {activeWorks.map((work, idx) => {
                 return (
                     <div key={work.id} className='active-work'>
-                        {currentIndex === idx && (work.media.split('.')[1] === 'mp4' ? (
-                            <video preload='none' className='media' controls>
+                        {work.media.split('.')[1] === 'mp4' ? currentIndex === idx && (
+                          <video preload='none' className='media' controls>
                                 <source src={baseURL+work.media} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>) : (
                                 <img loading='lazy' src={baseURL+work.media} />
-                            ))}
+                            )}
                     </div>
                 )
             })}
