@@ -2,6 +2,8 @@ import React, { useRef, useEffect, useState, useCallback } from 'react';
 import {IoClose} from 'react-icons/io5';
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
+const baseURL = import.meta.env.VITE_BASE_URL;
+
 function MediaPlayer({activeWorks, setActiveWorks}) {
   const worksContainerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -110,10 +112,10 @@ function MediaPlayer({activeWorks, setActiveWorks}) {
                     <div key={work.id} className='active-work'>
                         {currentIndex === idx && (work.media.split('.')[1] === 'mp4' ? (
                             <video preload='none' className='media' controls>
-                                <source src={'http://127.0.0.1:8000'+work.media} type="video/mp4" />
+                                <source src={baseURL+work.media} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>) : (
-                                <img loading='lazy' src={'http://127.0.0.1:8000'+work.media} />
+                                <img loading='lazy' src={baseURL+work.media} />
                             ))}
                     </div>
                 )
